@@ -3,6 +3,7 @@ client = Uber::Client.new do |config|
     config.client_id     = ENV['UBER_CLIENT_ID']
     config.client_secret = ENV["UBER_CLIENT_SECRET"]
     config.sandbox       = true
+    if config.sandbox.equals? true then
+        config.debug = true
+    end
 end
-# More info here https://developer.uber.com/docs/sandbox#section-product-types
-#
