@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/hasandiwan/uber-ruby.git
+  revision: b7661ef8640cc65970b1c6d555ac37d3e39d565f
+  specs:
+    uber-ruby (0.10.0)
+      faraday (~> 1.8.0)
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,7 +92,24 @@ GEM
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     faraday (1.8.0)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-httpclient (~> 1.0.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
+      faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-httpclient (1.0.1)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.2.0)
+    faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
@@ -112,8 +137,6 @@ GEM
     multipart-post (2.1.1)
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
@@ -200,6 +223,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
+    ruby2_keywords (0.0.5)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -226,9 +250,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    uber-ruby (0.10.0)
-      faraday (~> 0.9.0)
-      json
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -246,7 +267,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-18
-  x86_64-linux
 
 DEPENDENCIES
   bootstrap-sass
@@ -267,7 +287,7 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
-  uber-ruby
+  uber-ruby!
   web-console (>= 4.1.0)
   webpacker (~> 5.0)
 
