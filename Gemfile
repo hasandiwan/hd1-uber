@@ -56,3 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uber-ruby', require: 'uber', github: 'hasandiwan/uber-ruby'
 gem 'bootstrap-sass'
 gem 'omniauth-google-oauth2'
+gem 'devise'
