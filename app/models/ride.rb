@@ -1,6 +1,46 @@
 class Ride < ApplicationRecord
-    validates :source_latitude, numericality: {in: -90..90, message: 'source_latitude out of range'}, on: :create
-    validates :target_latitude, numericality: {in: -90..90, message: 'target_latitude out of range', on: :create}
-    validates :source_longitude, numericality: {in: -180..180, message: 'source_longitude out of range'}, on: :create
-    validates :target_longitude, numericality: {in: -180..180, message: 'target_longitude out of range'}, on: :create
+
+    def source_latitude=(src)
+        begin
+            src = src.to_i
+        rescue
+        end
+        unless src in -90..90
+            raise Exception, 'source_latitude out of range'
+        end
+        write_attribute(:source_latitude, src)
+    end
+
+    def target_latitude=(src)
+        begin
+            src = src.to_i
+        rescue
+        end
+        unless src in -90..90
+            raise Exception, 'target_latitude out of range'
+        end
+        write_attribute(:target_latitude, src)
+    end
+
+    def source_longitude=(src)
+        begin
+            src = src.to_i
+        rescue
+        end
+        unless src in -180..180
+            raise Exception, 'source_longitude out of range'
+        end
+        write_attribute(:source_longitude, src)
+    end
+
+    def target_longitude=(src)
+        begin
+            src = src.to_i
+        rescue
+        end
+        unless src in -180..180
+            raise Exception, 'target_longitude out of range'
+        end
+        write_attribute(:target_longitude, src)
+    end
 end
