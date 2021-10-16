@@ -3,8 +3,8 @@ require 'set'
 RSpec.describe "UberRequests", type: :request do
   describe "GET /new" do
     it "returns http success" do
-      get "/uber_request/new"
-      expect(response).to have_http_status(:success)
+      sign_in @user
+      get "/uber_request/new.json"
       json = JSON.parse(response.body.read)
       expect(json.has_key(:from)).to_be truthy
       expect(json[:from] =~  /^[-0-9.,]+$/).to_be 0

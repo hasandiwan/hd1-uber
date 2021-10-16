@@ -11,5 +11,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe UberRequestHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+    it 'logs user in' do
+        resource ||= user
+        scope = Devise::Mapping.find_scope!(resource)
+        login_as(resource, scope: scope)
+    end
 end
