@@ -17,11 +17,11 @@
     <script src="https://cdn.jsdelivr.net/npm/openlayers@4.6.5/dist/ol.min.js" integrity="sha384-Iuqn7//GO61lKlF2s08D9VRfcympY7cba3xCMBB+gnXV8EsqNjTgvHLdvIXSc7Xb" crossorigin="anonymous"></script>
     <script>
     $(document).ready(function() {
-        map = new OpenLayers.Map("mapdiv");
-        map.addLayer(new OpenLayers.Layer.OSM());
-        $('form').submit(function(event) {
+        $('form').submit(function(evt) {
+            map = new OpenLayers.Map("mapdiv");
+            map.addLayer(L.tileLayer('https://{s}.tiles.mapbox.com/v3/spatial.b625e395/{z}/{x}/{y}.png', { attribution: ''})).locate({setView: true, maxZoom: 16});
             alert('form submitted');
-            event.preventDefault();
+            evt.preventDefault();
         });
     });
     </script>
