@@ -1,2 +1,27 @@
-<h1>UberRequest#new</h1>
-<p>Find me in app/views/uber_request/new.html.erb</p>
+<h1>New Uber Request</h1>
+<div class="container">
+    <div class="container">
+        <div class="jumbotron">
+            <form>
+                <div class="form-group">
+                        <label for="fromAddress">From</label>
+                        <input type="text" class="form-control" id="fromAddress"/>
+                </div>
+                <div class="form-group">
+                        <label for="toAddress">Destination</label>
+                        <input type="text" class="form-control" id="toAddress"/>
+               </div>
+               <button type="button" class="btn btn-outline-success">Submit</button>
+            </form>
+    <div id="mapdiv"></div>
+    <script src="https://cdn.jsdelivr.net/npm/openlayers@4.6.5/dist/ol.min.js" integrity="sha384-Iuqn7//GO61lKlF2s08D9VRfcympY7cba3xCMBB+gnXV8EsqNjTgvHLdvIXSc7Xb" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+        $('form').submit(function(event) {
+            alert('form submitted');
+            event.preventDefault();
+        });
+    });
+    </script>
